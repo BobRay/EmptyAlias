@@ -6,4 +6,4 @@ EmptyAlias Extra for MODx Revolution
 
 Documentation is available at [Bob's Guides](http://bobsguides.com/emptyalias-tutorial.html)
 
-Utility snippet for MODX Revolution to reports Resources with empty aliases
+Utility snippet for MODX Revolution to report Resources with empty aliases
