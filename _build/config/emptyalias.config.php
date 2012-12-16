@@ -119,7 +119,7 @@ $components = array(
     /* Array of Resource pagetitles for your Extra; All other fields optional.
        You can set any resource field here */
     'resources' => array(
-        'EmptyAlias' => array( /* minimal emptyalias */
+        'EmptyAlias' => array(
             'pagetitle' => 'EmptyAlias',
             'alias' => 'empty-alias',
         ),
@@ -253,7 +253,6 @@ $components = array(
 
     'exportResources' => array(
         'EmptyAlias',
-        '',
     ),
     /* Array of resource parent IDs to get children of. */
     'parents' => array(),
@@ -264,7 +263,7 @@ $components = array(
 
     /* ******************** LEXICON HELPER SETTINGS ***************** */
     /* These settings are used by LexiconHelper */
-    'rewriteCodeFiles' => false,
+    'rewriteCodeFiles' => true,
     /*# remove ~~descriptions */
     'rewriteLexiconFiles' => true,
     /* automatically add missing strings to lexicon files */
