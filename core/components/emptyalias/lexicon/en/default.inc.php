@@ -34,3 +34,8 @@
  * @package emptyalias
  **/
 
+
+
+/* used in EmptyAlias or its included classes  */
+$_lang['ea_no_empty_aliases'] = 'No Resources with empty aliases';
+$_lang['ea_finished'] = 'Finished!';

@@ -1,4 +1,3 @@
-<?php
 /**
  * EmptyAlias snippet for EmptyAlias extra
  *
@@ -34,11 +33,13 @@
  * @package emptyalias
  **/
 
+$modx->lexicon->load('emptyalias:default');
+
 $resources = $modx->getCollection('modResource', array('alias' => ''));
 
 $output = '';
 if (empty($resources)) {
-    $output .= '<p>' . $modx->lexicon('ea_no_empty_aliases~~No Resources with empty aliases'). '</p>';
+    $output .= '<p>' . $modx->lexicon('ea_no_empty_aliases'). '</p>';
 } else {
     /* @var $resource modResource */
 }
@@ -47,8 +48,6 @@ foreach($resources as $resource) {
     $output .= "\n<li>" . $resource->get('pagetitle') . ' (' . $resource->get('id') . ')</li>';
 }
 $output .= "\n</ul>";
-$output .= "\n<p>" . $modx->lexicon('ea_finished~~Finished!') . '</p>';
+$output .= "\n<p>" . $modx->lexicon('ea_finished') . '</p>';
 
 return $output;
-
-
