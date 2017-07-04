@@ -2,7 +2,7 @@
 /**
  * snippets transport file for EmptyAlias extra
  *
- * Copyright 2012 by Bob Ray <http://bobsguides.com>
+ * Copyright 2012-2017 by Bob Ray <https://bobsguides.com>
  * Created on 12-15-2012
  *
  * @package emptyalias

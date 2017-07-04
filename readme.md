@@ -1,9 +1,13 @@
-EmptyAlias Extra for MODx Revolution
+EmptyAlias Extra for MODX Revolution
 =======================================
 
 
-**Author:** Bob Ray <http://bobsguides.com> [Bob's Guides](http://bobsguides.com)
+**Author:** Bob Ray [Bob's Guides](https://bobsguides.com)
 
-Documentation is available at [Bob's Guides](http://bobsguides.com/emptyalias-tutorial.html)
+**Documentation:** [EmptyAlias Docs](https://bobsguides.com/emptyalias-tutorial.html)
+
+**Bugs and requests:** [EmptyAlias Issues](https://github.com/BobRay/EmptyAlias/issues)
+
+**Questions about using EmptyAlias** [MODX Forums](https://forums.modx.com)
 
 Utility snippet for MODX Revolution to report Resources with empty aliases

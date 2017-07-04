@@ -11,7 +11,7 @@
  *
  * Build Script for MyComponent extra
  *
- * Copyright 2012 by Bob Ray <http://bobsguides.com>
+ * Copyright 2012-2017 by Bob Ray <https://bobsguides.com>
  * Created on 10-23-2012
  *
  * MyComponent is free software; you can redistribute it and/or modify it under the
@@ -37,7 +37,7 @@
  *
 
  */
-/* See the tutorial at http://http://bobsguides.com/mycomponent-tutorial.html
+/* See the tutorial at https://bobsguides.com/mycomponent-tutorial.html
  * for more detailed information about using the package.
  */
 
@@ -59,7 +59,7 @@ if (!class_exists('BuildHelper')) {
         public function sendLog($level, $message) {
 
             $msg = '';
-            if ($level == MODX::LOG_LEVEL_ERROR) {
+            if ($level == modX::LOG_LEVEL_ERROR) {
                 $msg .= $this->modx->lexicon('mc_error')
                     . ' -- ';
             }
@@ -81,7 +81,7 @@ $tstart = $mtime;
 set_time_limit(0);
 
 
-/* Instantiate MODx -- if this require fails, check your
+/* Instantiate MODX -- if this require fails, check your
  * _build/build.config.php file
  */
 require_once dirname(dirname(__FILE__)) . '/_build/build.config.php';
@@ -180,23 +180,23 @@ $hasResources = file_exists($sources['data'] . 'transport.resources.php');
 $hasValidators = is_dir($sources['build'] . 'validators'); /* Run a validators before installing anything */
 $hasResolvers = is_dir($sources['build'] . 'resolvers');
 $hasSetupOptions = is_dir($sources['data'] . 'install.options'); /* HTML/PHP script to interact with user */
-$hasMenu = file_exists($sources['data'] . 'transport.menus.php'); /* Add items to the MODx Top Menu */
-$hasSettings = file_exists($sources['data'] . 'transport.settings.php'); /* Add new MODx System Settings */
+$hasMenu = file_exists($sources['data'] . 'transport.menus.php'); /* Add items to the MODX Top Menu */
+$hasSettings = file_exists($sources['data'] . 'transport.settings.php'); /* Add new MODX System Settings */
 $hasContextSettings = file_exists($sources['data'] . 'transport.contextsettings.php');
 $hasSubPackages = is_dir($sources['data'] . 'subpackages');
 $minifyJS = $modx->getOption('minifyJS', $props, false);
 
-$helper->sendLog(MODX::LOG_LEVEL_INFO, "\n" . $modx->lexicon('mc_project')
+$helper->sendLog(modX::LOG_LEVEL_INFO, "\n" . $modx->lexicon('mc_project')
     . ': ' . $currentProject);
-$helper->sendLog(MODX::LOG_LEVEL_INFO, $modx->lexicon('mc_action')
+$helper->sendLog(modX::LOG_LEVEL_INFO, $modx->lexicon('mc_action')
     . ': ' . $modx->lexicon('mc_build')
     . "\n");
-$helper->sendLog(MODX::LOG_LEVEL_INFO, $modx->lexicon('mc_created_package')
+$helper->sendLog(modX::LOG_LEVEL_INFO, $modx->lexicon('mc_created_package')
     . ': ' . PKG_NAME_LOWER);
-$helper->sendLog(MODX::LOG_LEVEL_INFO, $modx->lexicon('mc_created_namespace')
+$helper->sendLog(modX::LOG_LEVEL_INFO, $modx->lexicon('mc_created_namespace')
     . ': ' . PKG_NAME_LOWER);
 /* load builder */
-$modx->setLogLevel(MODX::LOG_LEVEL_ERROR);
+$modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 $modx->loadClass('transport.modPackageBuilder', '', false, true);
 $builder = new modPackageBuilder($modx);
 $builder->createPackage(PKG_NAME_LOWER, PKG_VERSION, PKG_RELEASE);
@@ -205,7 +205,7 @@ $assetsPath = $hasAssets
     ? '{assets_path}components/' . PKG_NAME_LOWER . '/'
     : '';
 $builder->registerNamespace(PKG_NAME_LOWER, false, true, '{core_path}components/' . PKG_NAME_LOWER . '/', $assetsPath);
-$modx->setLogLevel(MODX::LOG_LEVEL_INFO);
+$modx->setLogLevel(modX::LOG_LEVEL_INFO);
 
 /* Transport Contexts */
 
@@ -372,10 +372,10 @@ foreach ($categories as $k => $categoryName) {
     $i++; /* will be 1 for the first category */
     $category->set('id', $i);
     $category->set('category', $categoryName);
-    $helper->sendLog(MODX::LOG_LEVEL_INFO,
+    $helper->sendLog(modX::LOG_LEVEL_INFO,
         $modx->lexicon('mc_creating_category')
             . ': ' . $categoryName);
-    $helper->sendLog(MODX::LOG_LEVEL_INFO, $modx->lexicon('mc_processing_elements_in_category')
+    $helper->sendLog(modX::LOG_LEVEL_INFO, $modx->lexicon('mc_processing_elements_in_category')
         . ': ' . $categoryName);
 
     /* add snippets */
@@ -589,7 +589,7 @@ foreach ($categories as $k => $categoryName) {
     $vehicle = $builder->createVehicle($category, $attr);
 
     if ($hasValidators && $i == 1) { /* only install these on first pass */
-        $helper->sendLog(MODX::LOG_LEVEL_INFO,
+        $helper->sendLog(modX::LOG_LEVEL_INFO,
             $modx->lexicon('mc_processing_validators'));
         $validators = empty($props['validators'])
             ? array()
@@ -630,7 +630,7 @@ foreach ($categories as $k => $categoryName) {
                                       'resource',
                                       'propertyset'
                                  ), $resolvers);
-        $helper->sendLog(MODX::LOG_LEVEL_INFO,
+        $helper->sendLog(modX::LOG_LEVEL_INFO,
             $modx->lexicon('mc_processing_resolvers'));
 
         foreach ($resolvers as $resolver) {
@@ -663,7 +663,7 @@ foreach ($categories as $k => $categoryName) {
      */
 
     if ($hasCore && $i == 1) {
-        $helper->sendLog(MODX::LOG_LEVEL_INFO,
+        $helper->sendLog(modX::LOG_LEVEL_INFO,
             $modx->lexicon('mc_packaged_core_files'));
         $vehicle->resolve('file', array(
                                        'source' => $sources['source_core'],
@@ -677,7 +677,7 @@ foreach ($categories as $k => $categoryName) {
      */
 
     if ($hasAssets && $i == 1) {
-        $helper->sendLog(MODX::LOG_LEVEL_INFO,
+        $helper->sendLog(modX::LOG_LEVEL_INFO,
             $modx->lexicon('mc_packaged_assets_files'));
         $vehicle->resolve('file', array(
                                        'source' => $sources['source_assets'],
