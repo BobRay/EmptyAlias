@@ -3,7 +3,7 @@
 * Resource resolver  for EmptyAlias extra.
 * Sets template, parent, and (optionally) TV values
 *
-* Copyright 2012-2017 by Bob Ray <https://bobsguides.com>
+* Copyright 2012-2017 Bob Ray <https://bobsguides.com>
 * Created on 12-15-2012
 *
  * EmptyAlias is free software; you can redistribute it and/or modify it under the
