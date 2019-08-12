@@ -26,12 +26,12 @@ if (! function_exists('stripPhpTags')) {
 $snippets = array();
 
 $snippets[1] = $modx->newObject('modSnippet');
-$snippets[1]->fromArray(array(
-    'id' => '1',
-    'property_preprocess' => '',
-    'name' => 'EmptyAlias',
-    'description' => 'Utility snippet to report Resources with empty aliases',
-    'properties' => '',
+$snippets[1]->fromArray(array (
+  'id' => 1,
+  'property_preprocess' => false,
+  'name' => 'EmptyAlias',
+  'description' => 'Utility snippet to report Resources with empty aliases',
+  'properties' => NULL,
 ), '', true, true);
 $snippets[1]->setContent(file_get_contents($sources['source_core'] . '/elements/snippets/emptyalias.snippet.php'));
 

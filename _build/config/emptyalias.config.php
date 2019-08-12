@@ -16,14 +16,14 @@ $components = array(
     'packageName' => 'EmptyAlias',  /* No spaces, no dashes */
     'packageNameLower' => $packageNameLower,
     'packageDescription' => 'Utility snippet to reports Resources with empty aliases',
-    'version' => '1.0.0',
-    'release' => 'beta1',
+    'version' => '1.0.1',
+    'release' => 'pl',
     'author' => 'Bob Ray',
     'email' => '<https://bobsguides.com>',
     'authorUrl' => 'https://bobsguides.com',
     'authorSiteName' => "Bob's Guides",
     'packageDocumentationUrl' => 'https://bobsguides.com/emptyalias-tutorial.html',
-    'copyright' => '2012',
+    'copyright' => '2012-2019',
 
     /* no need to edit this except to change format */
     'createdon' => strftime('%m-%d-%Y'),
@@ -38,12 +38,12 @@ $components = array(
     'dirPermission' => 0755,  /* No quotes!! */
     'filePermission' => 0644, /* No quotes!! */
 
-    /* Define source and target directories (mycomponent root and core directories) */
+    /* Define source and target directories */
+
+    /* path to MyComponent source files */
     'mycomponentRoot' => $this->modx->getOption('mc.root', null,
         MODX_CORE_PATH . 'components/mycomponent/'),
-    /* path to MyComponent source files */
-    'mycomponentCore' => $this->modx->getOption('mc.core_path', null,
-        MODX_CORE_PATH . 'components/mycomponent/core/components/mycomponent/'),
+
     /* path to new project root */
     'targetRoot' => MODX_ASSETS_PATH . 'mycomponents/' . $packageNameLower . '/',
 

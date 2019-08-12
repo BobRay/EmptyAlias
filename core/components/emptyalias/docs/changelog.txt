@@ -1,5 +1,10 @@
 Changelog for EmptyAlias
 
+EmptyAlias 1.0.1
+---------------------------------
+Update Copyrights
+Update Docs
+
 EmptyAlias 1.0.0
 ---------------------------------
 Initial Version
