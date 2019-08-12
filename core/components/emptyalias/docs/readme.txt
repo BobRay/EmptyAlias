@@ -3,7 +3,7 @@ EmptyAlias - Utility snippet for MODX Revolution that reports Resources with emp
 
 
 Author: Bob Ray <https://bobsguides.com>
-Copyright 2012-2017 Bob Ray
+Copyright 2012-2019 Bob Ray
 
 Official Documentation: https://bobsguides.com/emptyalias-tutorial.html
 
