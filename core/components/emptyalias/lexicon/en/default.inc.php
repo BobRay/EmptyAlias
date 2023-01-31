@@ -2,7 +2,7 @@
 /**
  * en default topic lexicon file for EmptyAlias extra
  *
- * Copyright 2012-2019 Bob Ray <https://bobsguides.com>
+ * Copyright 2012-2023 Bob Ray <https://bobsguides.com>
  * Created on 12-15-2012
  *
  * EmptyAlias is free software; you can redistribute it and/or modify it under the
@@ -39,3 +39,4 @@
 /* used in EmptyAlias or its included classes  */
 $_lang['ea_no_empty_aliases'] = 'No Resources with empty aliases';
 $_lang['ea_finished'] = 'Finished!';
+$_lang['Fixed'] = 'Fixed!';

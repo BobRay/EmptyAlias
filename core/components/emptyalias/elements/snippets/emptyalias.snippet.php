@@ -2,7 +2,7 @@
 /**
  * EmptyAlias snippet for EmptyAlias extra
  *
- * Copyright 2012-2019 Bob Ray <https://bobsguides.com>
+ * Copyright 2012-2023 Bob Ray <https://bobsguides.com>
  * Created on 12-15-2012
  *
  * EmptyAlias is free software; you can redistribute it and/or modify it under the
@@ -34,9 +34,13 @@
  * @package emptyalias
  **/
 
+$prefix = $modx->getVersionData()['version'] >= 3
+    ? 'MODX\Revolution\\'
+    : '';
+
 $modx->lexicon->load('emptyalias:default');
 
-$resources = $modx->getCollection('modResource', array('alias' => ''));
+$resources = $modx->getCollection($prefix . 'modResource', array('alias' => ''));
 
 $output = '';
 if (empty($resources)) {
@@ -46,7 +50,10 @@ if (empty($resources)) {
 }
 $output .= "\n<ul>";
 foreach($resources as $resource) {
-    $output .= "\n<li>" . $resource->get('pagetitle') . ' (' . $resource->get('id') . ')</li>';
+    $pagetitle = $resource->get('pagetitle');
+    $resource->set('alias', $resource->cleanAlias($pagetitle));
+    $resource->save();
+    $output .= "\n<li>" . $pagetitle . ' (' . $resource->get('id') . ') -- ' . $modx->lexicon('fixed') . '</li>';
 }
 $output .= "\n</ul>";
 $output .= "\n<p>" . $modx->lexicon('ea_finished') . '</p>';
