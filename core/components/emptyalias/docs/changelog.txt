@@ -1,10 +1,15 @@
 Changelog for EmptyAlias
 
+EmptyAlias 1.0.3
+---------------------------------
+ - Fully updated for MODX 3
+ - Now fixes empty aliases
+
 EmptyAlias 1.0.1
 ---------------------------------
-Update Copyrights
-Update Docs
+ - Update Copyrights
+ - Update Docs
 
 EmptyAlias 1.0.0
 ---------------------------------
-Initial Version
+ - Initial Version

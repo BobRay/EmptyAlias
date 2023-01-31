@@ -1,9 +1,9 @@
 
-EmptyAlias - Utility snippet for MODX Revolution that reports Resources with empty aliases.
+EmptyAlias - Utility snippet for MODX Revolution that reports Resources with empty aliases and fixes them.
 
 
 Author: Bob Ray <https://bobsguides.com>
-Copyright 2012-2019 Bob Ray
+Copyright 2012-2023 Bob Ray
 
 Official Documentation: https://bobsguides.com/emptyalias-tutorial.html
 
